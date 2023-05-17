@@ -20,8 +20,8 @@ jobs:
         run: npm install 
         
       - name: Permission to .sh files
-        run: chmod 777 e2e-tests.sh
-             chmod 777 all-tests.sh 
+        run: chmod 777 ../../e2e-tests.sh
+             chmod 777 ../../all-tests.sh 
 
       - name: Run WDIO tests
         run: npm run test:e2e
