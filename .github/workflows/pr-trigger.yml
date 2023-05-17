@@ -1,0 +1,35 @@
+name: Run Automated script when PR Trigger
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  wdio:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '10'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run WDIO tests
+        run: npm run wdio
+  
+  upload-artifacts:
+    needs: wdio
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifacts on failure
+        if: ${{ always() }}
+        uses: actions/download-artifact@v2
+        with:
+          name: my-artifacts
+          path: path/to/download
