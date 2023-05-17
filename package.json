@@ -117,8 +117,8 @@
   "scripts": {
     "lint": "eslint .",
     "testscss": "gulp stylelint",
-    "selenium-setup": "selenium-standalone install --drivers.chrome.version = 102.0.5005.61 --drivers.chrome.baseURL=https://chromedriver.storage.googleapis.com",
-    "selenium-start": "selenium-standalone start --drivers.chrome.version = 102.0.5005.61 --drivers.chrome.baseURL=https://chromedriver.storage.googleapis.com",
+    "selenium-setup": "selenium-standalone install --drivers.chrome.version = 113.0.5672.63 --drivers.chrome.baseURL=https://chromedriver.storage.googleapis.com",
+    "selenium-start": "selenium-standalone start --drivers.chrome.version = 113.0.5672.63 --drivers.chrome.baseURL=https://chromedriver.storage.googleapis.com",
     "e2e-tests": "wdio wdio.conf.js --suite smoke",
     "sanity-tests": "wdio wdio.conf.js --suite sanity",
     "all-tests": "wdio wdio.conf.js --suite all",
