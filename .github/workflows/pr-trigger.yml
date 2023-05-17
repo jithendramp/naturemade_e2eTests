@@ -15,12 +15,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 10
+          
+      - name: Permission to .sh files
+        run: chmod 777 e2e-tests.sh
         
       - name: Install Node Modules
         run: npm install 
-        
-      - name: Permission to .sh files
-        run: chmod 777 e2e-tests.sh
 
       - name: Run WDIO tests
         run: npm run test:e2e
