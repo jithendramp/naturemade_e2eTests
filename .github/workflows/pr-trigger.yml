@@ -49,6 +49,12 @@ jobs:
 
       - name: Run WDIO tests
         run: npm run test:e2e
+        
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifacts
+          path: ./artifacts
   
   upload-artifacts:
     needs: wdio
@@ -60,4 +66,4 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifacts
-          path: path/to/download
+          path: ./artifacts
