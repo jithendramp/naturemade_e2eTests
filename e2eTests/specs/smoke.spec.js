@@ -67,7 +67,7 @@ describe("Home page",()=>{
 
     })
 
-    it.SKIP("Verify that the user is navigated to the appropriate search results page when the the user searches in the search bar",()=>{
+    it.skip("Verify that the user is navigated to the appropriate search results page when the the user searches in the search bar",()=>{
           Home.homepageMethod();
           Home.search.waitForVisible();
           Home.search.click();
