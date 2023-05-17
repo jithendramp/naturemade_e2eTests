@@ -24,7 +24,7 @@ jobs:
   
   upload-artifacts:
     needs: wdio
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Download artifacts on failure
