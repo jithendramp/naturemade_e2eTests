@@ -74,7 +74,7 @@ exports.config = {
         args : [
 
           "--disable-extensions",
-          //"--headless",
+          "--headless",
            "--no-sandbox", 
           "--disable-gpu", 
          
