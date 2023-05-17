@@ -41,7 +41,7 @@ describe("Home page",()=>{
         Home.homepageMethod();
     })
 
-    it.skip("Verify that the user is navigated to 'Login' page when 'Sign in' button is clicked",()=>{
+    it("Verify that the user is navigated to 'Login' page when 'Sign in' button is clicked",()=>{
           Home.homepageMethod();
           Home.signinLink.waitForVisible();
           Home.signinLink.click();
@@ -51,7 +51,7 @@ describe("Home page",()=>{
           expect(Home.loginPage.getText()).eql(testData.titles.logintitle)
     })
 
-    it.skip("Verify that the user is logged in successfully when the valid 'Email & Password' is submitted",()=>{
+    it("Verify that the user is logged in successfully when the valid 'Email & Password' is submitted",()=>{
           // Home.forDevUrlLaunch()
           Home.loginUser();
           if(Home.newRatingPopupCancelIcon.isVisible()) {
@@ -1430,7 +1430,7 @@ describe.skip("Find your daily routine - Bundles and Recently viewed Products",(
     })
   })
 
-describe("Product list page",()=>{
+describe.SKIP("Product list page",()=>{
     it("Verify that the filter dialog is displayed when user clicks on Filter option in Product list page",()=>{
       Home.vitaminsAndSupplemntsHeadrMenuLink();
       browser.scroll(0, 1400);
@@ -1709,7 +1709,7 @@ describe("Product list page",()=>{
 
 describe.skip("Product details page",()=>{
 
-  it("Verify that the review dialog is displayed when user clicks on 'Write a review' option in 'Product details' page",()=>{
+  it.SKIP("Verify that the review dialog is displayed when user clicks on 'Write a review' option in 'Product details' page",()=>{
         Home.vitaminsAndSupplemntsHeadrMenuLink1();
         productDetailsPage.writeAReviewLink.waitForVisible();
         productDetailsPage.writeAReviewLink.click();
@@ -1718,7 +1718,7 @@ describe.skip("Product details page",()=>{
         expect(productDetailsPage.reviewPopUp.getText()).to.eql(testData.productTitles.reviewPopUp)
   })
 
-  it("Verify that the user is navigated to 'Reviews' section when 'Ratings' on the product is clicked in 'Product details page",()=>{
+  it.SKIP("Verify that the user is navigated to 'Reviews' section when 'Ratings' on the product is clicked in 'Product details page",()=>{
         Home.vitaminsAndSupplemntsHeadrMenuLink1();
         productDetailsPage.writeAReviewStar.waitForVisible();
         productDetailsPage.writeAReviewStar.click();
