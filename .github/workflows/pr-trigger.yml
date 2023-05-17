@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: my-artifacts
-          path: ./artifacts
+          path: errorShots
   
   upload-artifacts:
     needs: wdio
@@ -55,4 +55,4 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifacts
-          path: ./artifacts
+          path: errorShots
