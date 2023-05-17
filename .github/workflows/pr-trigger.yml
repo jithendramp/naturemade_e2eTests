@@ -6,7 +6,7 @@ on:
 
 jobs:
   wdio:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -52,7 +52,7 @@ jobs:
   
   upload-artifacts:
     needs: wdio
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Download artifacts on failure
