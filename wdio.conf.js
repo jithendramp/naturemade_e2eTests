@@ -74,7 +74,7 @@ exports.config = {
         args : [
 
           "--disable-extensions",
-          //"--headless",
+          "--headless",
            "--no-sandbox", 
           "--disable-gpu", 
          
@@ -168,7 +168,7 @@ exports.config = {
     baseURL: "https://selenium-release.storage.googleapis.com",
     drivers: {
        chrome: {
-         version: "102.0.5005.61",
+         version: "113.0.5672.63",
          arch: process.arch,
          baseURL: "https://chromedriver.storage.googleapis.com"
        }
@@ -205,13 +205,13 @@ exports.config = {
   },
   seleniumInstallArgs: {
     drivers: {
-      chrome: { version: '102.0.5005.61' },
+      chrome: { version: '113.0.5672.63' },
       firefox: { version: '0.25.0' },
     }
   },
   seleniumArgs: {
     drivers: {
-      chrome: { version: '102.0.5005.61' },
+      chrome: { version: '113.0.5672.63' },
       firefox: { version: '0.25.0' },
     }
   },
