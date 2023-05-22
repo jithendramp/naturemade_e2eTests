@@ -1430,7 +1430,7 @@ describe.skip("Find your daily routine - Bundles and Recently viewed Products",(
     })
   })
 
-describe.SKIP("Product list page",()=>{
+describe.skip("Product list page",()=>{
     it("Verify that the filter dialog is displayed when user clicks on Filter option in Product list page",()=>{
       Home.vitaminsAndSupplemntsHeadrMenuLink();
       browser.scroll(0, 1400);
@@ -1709,7 +1709,7 @@ describe.SKIP("Product list page",()=>{
 
 describe.skip("Product details page",()=>{
 
-  it.SKIP("Verify that the review dialog is displayed when user clicks on 'Write a review' option in 'Product details' page",()=>{
+  it.skip("Verify that the review dialog is displayed when user clicks on 'Write a review' option in 'Product details' page",()=>{
         Home.vitaminsAndSupplemntsHeadrMenuLink1();
         productDetailsPage.writeAReviewLink.waitForVisible();
         productDetailsPage.writeAReviewLink.click();
@@ -1718,7 +1718,7 @@ describe.skip("Product details page",()=>{
         expect(productDetailsPage.reviewPopUp.getText()).to.eql(testData.productTitles.reviewPopUp)
   })
 
-  it.SKIP("Verify that the user is navigated to 'Reviews' section when 'Ratings' on the product is clicked in 'Product details page",()=>{
+  it.skip("Verify that the user is navigated to 'Reviews' section when 'Ratings' on the product is clicked in 'Product details page",()=>{
         Home.vitaminsAndSupplemntsHeadrMenuLink1();
         productDetailsPage.writeAReviewStar.waitForVisible();
         productDetailsPage.writeAReviewStar.click();
