@@ -6,7 +6,7 @@ on:
       
 env:
   # Store URL, like your-store.myshopify.com
-  SHOPIFY_FLAG_STORE: '${{ vars.STAGING_SHOP_NAME }}.myshopify.com'
+  NATURE_MADE_PRE_URL: 'https://naturemade1-dev.myshopify.com/?preview_theme_id=123006615649
 
 jobs:
   wdio:
@@ -33,6 +33,9 @@ jobs:
             curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION} && break
             sleep 5
           done
+          
+      - name: Set environment variable
+        run: echo "NATURE_MADE_PRE_URL=${{ env.NATURE_MADE_PRE_URL }}" >> $GITHUB_ENV
           
       - name: Permission to .sh files
         run: chmod 777 e2e-tests.sh
