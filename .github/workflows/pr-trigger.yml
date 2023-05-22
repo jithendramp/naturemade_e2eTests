@@ -1,8 +1,12 @@
 name: Run Automated script when PR Trigger
 on:
   pull_request:
-    types:
-      - opened
+    branches:
+      - main
+      
+env:
+  # Store URL, like your-store.myshopify.com
+  SHOPIFY_FLAG_STORE: '${{ vars.STAGING_SHOP_NAME }}.myshopify.com'
 
 jobs:
   wdio:
