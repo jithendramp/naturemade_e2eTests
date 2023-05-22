@@ -5,7 +5,7 @@ on:
       - main
       
 env:
-  NATURE_MADE_PRE_URL: 'https://naturemade1-dev.myshopify.com/?preview_theme_id=123006615649
+  NATURE_MADE_PRE_URL: 'https://naturemade1-dev.myshopify.com/?preview_theme_id=123006615649'
 
 jobs:
   wdio:
