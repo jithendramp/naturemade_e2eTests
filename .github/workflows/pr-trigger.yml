@@ -39,34 +39,20 @@ jobs:
       - name: Permission to .sh files
         run: chmod 777 e2e-tests.sh
         
-#       - name: Restore Node.js modules cache
-#         uses: actions/cache@v2
-#         with:
-#           path: ~/.npm
-#           key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
-
-#       - name: Download Node.js modules artifact
-#         uses: actions/download-artifact@v2
-#         with:
-#           name: node_modules
-        
-#       - name: Install Node Modules #
-#         run: npm install
+      - name: Restore Node.js modules cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         
       - name: Install dependencies
         run: npm ci
-        
-      - name: Save Node.js modules as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: node_modules
-          path: node_modules
 
-#       - name: Save Node.js modules cache
-#         uses: actions/cache@v2
-#         with:
-#           path: ~/.npm
-#           key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+      - name: Save Node.js modules cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}          
 
       - name: Run WDIO tests
         run: npm run test:e2e
