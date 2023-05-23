@@ -112,7 +112,8 @@ exports.config = {
   //
   // Set a base URL in order to shorten url command calls. If your url parameter starts
   // with "/", then the base url gets prepended.
-  baseUrl: process.env.E2E_TEST_FRONTEND_URL,
+  // baseUrl: process.env.E2E_TEST_FRONTEND_URL,
+  baseUrl: process.env.NATURE_MADE_PRE_URL,
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 20000,
@@ -163,12 +164,12 @@ exports.config = {
 
   seleniumInstallArgs: {
     version: "3.141.5",
-    baseURL: "https://selenium-release.storage.googleapis.com",
+    baseUrl: process.env.NATURE_MADE_PRE_URL,
     drivers: {
        chrome: {
          version: "113.0.5672.63",
          arch: process.arch,
-         baseURL: "https://chromedriver.storage.googleapis.com"
+         baseUrl: process.env.NATURE_MADE_PRE_URL,
        }
      }
 

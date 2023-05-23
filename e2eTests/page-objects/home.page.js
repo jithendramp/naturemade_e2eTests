@@ -839,7 +839,9 @@ class Home extends Page{
     
 
 homepageMethod(){
-    browser.url(testData.naturemade.url);
+    // browser.url(testData.naturemade.url);
+    browser.url('/');
+    console.log("Base URL = " + '/')
     if(this.acceptcookieepopup.isVisible()){
         this.acceptcookieepopup.click();
     } 
