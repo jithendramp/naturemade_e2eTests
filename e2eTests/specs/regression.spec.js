@@ -22,14 +22,9 @@ import gmailPage from '../page-objects/gmail.page.js';
 import homePage from '../page-objects/home.page';
 import contactUs from '../page-objects/contact.us.js';
 import information from '../page-objects/information.js';
-import { info } from 'console';
-import { split } from 'lodash';
 import socialMediaHomePage from '../page-objects/social.media.home.page';
 import blogPage from '../page-objects/blog.page.js';
-import p from 'proxyquire';
-// import { waituntilisvisible } from "../page-objects/functions";
 import paymentPage from '../page-objects/payment.page.js';
-import { homedir } from 'os';
 
 
 var assert = require('assert');
