@@ -42,8 +42,8 @@ jobs:
       - name: Restore Node.js modules cache
         uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ./node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
         
 #       - name: Install Node Modules #
 #         run: npm install
@@ -54,8 +54,8 @@ jobs:
       - name: Save Node.js modules cache
         uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ./node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
 
       - name: Run WDIO tests
         run: npm run test:e2e
