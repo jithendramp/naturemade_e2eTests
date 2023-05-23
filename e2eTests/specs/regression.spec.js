@@ -2,7 +2,6 @@ import { expect } from 'chai';
 import Login from "../page-objects/login.page.js";
 import Home from "../page-objects/home.page";
 import footer from "../page-objects/footer.page";
-import ProductList from "../page-objects/product.list.page";
 import productDetailsPage from "../page-objects/product.details.page";
 import CartPage from "../page-objects/cart.page";
 import Landing from "../page-objects/account.page";
