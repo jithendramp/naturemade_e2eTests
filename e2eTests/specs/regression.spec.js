@@ -1,255 +1,279 @@
-import { expect } from 'chai';
-import Login from "../page-objects/login.page.js";
-import Home from "../page-objects/home.page";
-import footer from "../page-objects/footer.page";
-import productDetailsPage from "../page-objects/product.details.page";
-import CartPage from "../page-objects/cart.page";
-import Landing from "../page-objects/account.page";
-import Checkout from "../page-objects/checkout.page";
-import Shipping from "../page-objects/shipping.page";
-import SocialMedia from "../page-objects/social.media.home.page";
-import SignUp from "../page-objects/signup.page";
-import cartPage from "../page-objects/cart.page";
-import testData from "../constants/testData.json";
-import productListPage from '../page-objects/product.list.page';
-import information from '../page-objects/information.js';
-import socialMediaHomePage from '../page-objects/social.media.home.page';
-import blogPage from '../page-objects/blog.page.js';
-import paymentPage from '../page-objects/payment.page.js';
+// import LoginPage from '../pageobjects/login.page.js'
+
+// describe('My Login application', () => {
+//     it('should login with valid credentials', async () => {
+//         browser.url('/')
+//         // await browser.fullscreenWindow()
+//         expect(LoginPage.enterPWDLink).toHaveTextContaining('Enter using password')
+//         await LoginPage.enterPWDLink.click()
+//         await LoginPage.inputPassword.setValue('port80')
+//         await LoginPage.enterBtn.click()
+//         await LoginPage.acceptCookieBtn.click()
+//     })
+
+//     it('Fail Scenario', async () => {
+//         await browser.url('/')
+//         // await browser.fullscreenWindow()
+//         expect(await LoginPage.enterPWDLink).toHaveTextContaining('Enter using password')
+//         await LoginPage.enterPWDLink.click()
+//         // await LoginPage.inputPassword.setValue('port80')
+//         // await LoginPage.enterBtn.click()
+//         // await LoginPage.acceptCookieBtn.click()
+//     })
+// })
+
+// import { expect } from 'chai';
+// import Login from "../page-objects/login.page.js";
+// import Home from "../page-objects/home.page";
+// import footer from "../page-objects/footer.page";
+// import productDetailsPage from "../page-objects/product.details.page";
+// import CartPage from "../page-objects/cart.page";
+// import Landing from "../page-objects/account.page";
+// import Checkout from "../page-objects/checkout.page";
+// import Shipping from "../page-objects/shipping.page";
+// import SocialMedia from "../page-objects/social.media.home.page";
+// import SignUp from "../page-objects/signup.page";
+// import cartPage from "../page-objects/cart.page";
+// import testData from "../constants/testData.json";
+// import productListPage from '../page-objects/product.list.page';
+// import information from '../page-objects/information.js';
+// import socialMediaHomePage from '../page-objects/social.media.home.page';
+// import blogPage from '../page-objects/blog.page.js';
+// import paymentPage from '../page-objects/payment.page.js';
 
 
-var assert = require('assert');
-var email;
-var productName;
+// var assert = require('assert');
+// var email;
+// var productName;
 
-describe("Home page",()=>{
-    it("Verify that the user is redirected to the Login page when SignIn button is clicked",()=>{
-        // Home.forDevUrlLaunch()
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.loginPage.waitForVisible();
-        expect(Home.loginPage.getText()).to.eql(testData.titles.logintitle)
-    })
+// describe("Home page",()=>{
+//     it("Verify that the user is redirected to the Login page when SignIn button is clicked",()=>{
+//         // Home.forDevUrlLaunch()
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.loginPage.waitForVisible();
+//         expect(Home.loginPage.getText()).to.eql(testData.titles.logintitle)
+//     })
 
-    it("Verify that the Email and Password fileds are displayed appropriately on the Login page",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.email.waitForVisible();
-        expect(Home.email.isVisible()).to.eql(true);
-        Home.password.waitForVisible();
-        expect(Home.password.isVisible()).to.eql(true);
-    })
+//     it("Verify that the Email and Password fileds are displayed appropriately on the Login page",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.email.waitForVisible();
+//         expect(Home.email.isVisible()).to.eql(true);
+//         Home.password.waitForVisible();
+//         expect(Home.password.isVisible()).to.eql(true);
+//     })
 
-    it("Verify that the Email and Pasword fields are marked as mandatory (*)",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.emailRequired.waitForVisible();
-        expect(Home.emailRequired.getText()).to.eql(testData.login.emailRequired)
-        //expect(Home.emailRequired.getText()).to.eql(false);
-        Home.passwordRequired.waitForVisible();
-        expect(Home.passwordRequired.getText()).to.eql(testData.login.passwordRequired)
-        //expect(Home.passwordRequired.isVisible()).to.eql(false);
-    })
+//     it("Verify that the Email and Pasword fields are marked as mandatory (*)",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.emailRequired.waitForVisible();
+//         expect(Home.emailRequired.getText()).to.eql(testData.login.emailRequired)
+//         //expect(Home.emailRequired.getText()).to.eql(false);
+//         Home.passwordRequired.waitForVisible();
+//         expect(Home.passwordRequired.getText()).to.eql(testData.login.passwordRequired)
+//         //expect(Home.passwordRequired.isVisible()).to.eql(false);
+//     })
 
-    it("Verify that the user is redirected to the 'Create Account' page when 'Create account' button is clicked",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.createAccountLink.waitForVisible();
-        Home.createAccountLink.click();
-        Home.createAcctHeading.waitForVisible();
-        expect(Home.createAcctHeading.getText()).to.eql(testData.createAccntDetails.createAcctHeading)
-    })
+//     it("Verify that the user is redirected to the 'Create Account' page when 'Create account' button is clicked",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.createAccountLink.waitForVisible();
+//         Home.createAccountLink.click();
+//         Home.createAcctHeading.waitForVisible();
+//         expect(Home.createAcctHeading.getText()).to.eql(testData.createAccntDetails.createAcctHeading)
+//     })
 
-    it("Verify that the appropriate error message is displayed when required fields are not submitted",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.createAccountLink.waitForVisible();
-        Home.createAccountLink.click();
-        browser.scroll(".nm__field:nth-child(6) label");
-        Home.createBtn.waitForVisible();
-        Home.createBtn.click();
-        browser.scroll(0, 0);
-        if(Home.subscribeCancelIcon.isVisible()){
-            Home.subscribeCancelIcon.click();
-         }
-        browser.pause(4000);
-        Home.emailFldErrorMsg.waitForVisible();
-        expect(Home.emailFldErrorMsg.getText()).to.eql(testData.login.emailErrMsg);
-        Home.pwdFldErrorMsg.waitForVisible();
-        expect(Home.pwdFldErrorMsg.getText()).to.eql(testData.login.pwdErrMsg);
+//     it("Verify that the appropriate error message is displayed when required fields are not submitted",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.createAccountLink.waitForVisible();
+//         Home.createAccountLink.click();
+//         browser.scroll(".nm__field:nth-child(6) label");
+//         Home.createBtn.waitForVisible();
+//         Home.createBtn.click();
+//         browser.scroll(0, 0);
+//         if(Home.subscribeCancelIcon.isVisible()){
+//             Home.subscribeCancelIcon.click();
+//          }
+//         browser.pause(4000);
+//         Home.emailFldErrorMsg.waitForVisible();
+//         expect(Home.emailFldErrorMsg.getText()).to.eql(testData.login.emailErrMsg);
+//         Home.pwdFldErrorMsg.waitForVisible();
+//         expect(Home.pwdFldErrorMsg.getText()).to.eql(testData.login.pwdErrMsg);
 
-    })
+//     })
 
-    it("Verify that the user is able to login successfully with the new created account",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.createAccountLink.waitForVisible();
-        Home.createAccountLink.click();
-        Home.accountCreation();
-        browser.pause(5000);
-        if(Home.subscribeCancelIcon.isVisible()){
-            Home.subscribeCancelIcon.click();
-        }
-        Home.myAccount_1.waitForVisible();
-        Home.myAccount_1.click();
-        Home.browserMethod();
-        Home.logOutLink.waitForVisible();
-        Home.logOutLink.click();
-        Home.browserMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.email.waitForVisible();
-        Home.email.click();
-        Home.email.setValue([testData.createAccntDetails.email]);
-        Home.passwordField.waitForVisible();
-        Home.passwordField.click();
-        Home.passwordField.setValue([testData.createAccntDetails.password]);
-        Home.signin.waitForVisible();
-        Home.signin.click();
-        //expect(Home.accountTxt.getText()).to.eql(testData.createAccntDetails.accountTxt)
-        Home.logOutLink.waitForVisible();
-        Home.logOutLink.click();
-        Home.bannerName.waitForVisible();
-        expect(Home.bannerName.getText()).eql(testData.titles.shopNowText);
-    })
+//     it("Verify that the user is able to login successfully with the new created account",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.createAccountLink.waitForVisible();
+//         Home.createAccountLink.click();
+//         Home.accountCreation();
+//         browser.pause(5000);
+//         if(Home.subscribeCancelIcon.isVisible()){
+//             Home.subscribeCancelIcon.click();
+//         }
+//         Home.myAccount_1.waitForVisible();
+//         Home.myAccount_1.click();
+//         Home.browserMethod();
+//         Home.logOutLink.waitForVisible();
+//         Home.logOutLink.click();
+//         Home.browserMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.email.waitForVisible();
+//         Home.email.click();
+//         Home.email.setValue([testData.createAccntDetails.email]);
+//         Home.passwordField.waitForVisible();
+//         Home.passwordField.click();
+//         Home.passwordField.setValue([testData.createAccntDetails.password]);
+//         Home.signin.waitForVisible();
+//         Home.signin.click();
+//         //expect(Home.accountTxt.getText()).to.eql(testData.createAccntDetails.accountTxt)
+//         Home.logOutLink.waitForVisible();
+//         Home.logOutLink.click();
+//         Home.bannerName.waitForVisible();
+//         expect(Home.bannerName.getText()).eql(testData.titles.shopNowText);
+//     })
 
-    it("Verify that the appropriate error message is displayed when Email fileld is not submitted",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.passwordField.waitForVisible();
-        Home.passwordField.click();
-        Home.passwordField.setValue([testData.createAccntDetails.password]);
-        Home.signin.waitForVisible();
-        Home.signin.click();
-        Home.InvalidErrorMsg.waitForVisible();
-        expect(Home.InvalidErrorMsg.getText()).to.eql(testData.login.errorMsg);
-        // Home.emailErrorMsg.waitForVisible();
-        // expect(Home.emailErrorMsg.getText()).to.eql(testData.login.thisFldReqerrMsg)
-    })
+//     it("Verify that the appropriate error message is displayed when Email fileld is not submitted",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.passwordField.waitForVisible();
+//         Home.passwordField.click();
+//         Home.passwordField.setValue([testData.createAccntDetails.password]);
+//         Home.signin.waitForVisible();
+//         Home.signin.click();
+//         Home.InvalidErrorMsg.waitForVisible();
+//         expect(Home.InvalidErrorMsg.getText()).to.eql(testData.login.errorMsg);
+//         // Home.emailErrorMsg.waitForVisible();
+//         // expect(Home.emailErrorMsg.getText()).to.eql(testData.login.thisFldReqerrMsg)
+//     })
 
-    it("Verify that the appropriate error message is displayed when user entered invalid email address in the Email field",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.email.waitForVisible();
-        Home.email.click();
-        Home.email.setValue([testData.createAccntDetails.invalidEmail]);
-        Home.passwordField.waitForVisible();
-        Home.passwordField.click();
-        Home.passwordField.setValue([testData.createAccntDetails.password]);
-        Home.signin.waitForVisible();
-        Home.signin.click();
-        Home.InvalidErrorMsg.waitForVisible();
-        expect(Home.InvalidErrorMsg.getText()).to.eql(testData.login.errorMsg);
-    })
+//     it("Verify that the appropriate error message is displayed when user entered invalid email address in the Email field",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.email.waitForVisible();
+//         Home.email.click();
+//         Home.email.setValue([testData.createAccntDetails.invalidEmail]);
+//         Home.passwordField.waitForVisible();
+//         Home.passwordField.click();
+//         Home.passwordField.setValue([testData.createAccntDetails.password]);
+//         Home.signin.waitForVisible();
+//         Home.signin.click();
+//         Home.InvalidErrorMsg.waitForVisible();
+//         expect(Home.InvalidErrorMsg.getText()).to.eql(testData.login.errorMsg);
+//     })
 
-    it("Verify that the appropriate error message is displayed when user entered unregistered email address in the Email field",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.email.waitForVisible();
-        Home.email.click();
-        Home.email.setValue([testData.createAccntDetails.unregesterEmail]);
-        Home.passwordField.waitForVisible();
-        Home.passwordField.click();
-        Home.passwordField.setValue([testData.createAccntDetails.password]);
-        Home.signin.waitForVisible();
-        Home.signin.click();
-        Home.InvalidErrorMsg.waitForVisible();
-        expect(Home.InvalidErrorMsg.getText()).to.eql(testData.login.errorMsg);
-    })
+//     it("Verify that the appropriate error message is displayed when user entered unregistered email address in the Email field",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.email.waitForVisible();
+//         Home.email.click();
+//         Home.email.setValue([testData.createAccntDetails.unregesterEmail]);
+//         Home.passwordField.waitForVisible();
+//         Home.passwordField.click();
+//         Home.passwordField.setValue([testData.createAccntDetails.password]);
+//         Home.signin.waitForVisible();
+//         Home.signin.click();
+//         Home.InvalidErrorMsg.waitForVisible();
+//         expect(Home.InvalidErrorMsg.getText()).to.eql(testData.login.errorMsg);
+//     })
 
-    it("Verify that appropriate error is displayed when registered email and invalid password is submitted",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.email.waitForVisible();
-        Home.email.click();
-        Home.email.setValue([testData.createAccntDetails.email]);
-        Home.passwordField.waitForVisible();
-        Home.passwordField.click();
-        Home.passwordField.setValue([testData.createAccntDetails.invalidPassword]);
-        Home.signin.waitForVisible();
-        Home.signin.click();
-        Home.InvalidErrorMsg.waitForVisible();
-        expect(Home.InvalidErrorMsg.getText()).to.eql(testData.login.errorMsg);
-    })
+//     it("Verify that appropriate error is displayed when registered email and invalid password is submitted",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.email.waitForVisible();
+//         Home.email.click();
+//         Home.email.setValue([testData.createAccntDetails.email]);
+//         Home.passwordField.waitForVisible();
+//         Home.passwordField.click();
+//         Home.passwordField.setValue([testData.createAccntDetails.invalidPassword]);
+//         Home.signin.waitForVisible();
+//         Home.signin.click();
+//         Home.InvalidErrorMsg.waitForVisible();
+//         expect(Home.InvalidErrorMsg.getText()).to.eql(testData.login.errorMsg);
+//     })
 
-    it("Verify that 'Reset Password' page is displayed when the 'Forgot Password' link is clicked",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.forgottPasswordLink.waitForVisible();
-        Home.forgottPasswordLink.click();
-        Home.resetYourPasswordTxt.waitForVisible();
-        expect(Home.resetYourPasswordTxt.getText()).to.eql(testData.login.resetYourPassword);
-    })
+//     it("Verify that 'Reset Password' page is displayed when the 'Forgot Password' link is clicked",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.forgottPasswordLink.waitForVisible();
+//         Home.forgottPasswordLink.click();
+//         Home.resetYourPasswordTxt.waitForVisible();
+//         expect(Home.resetYourPasswordTxt.getText()).to.eql(testData.login.resetYourPassword);
+//     })
 
-    // it("Verify that an appropriate error is displayed when the user clicks on 'Submit' button without entering an email address.",()=>{
-    //     Home.homepageMethod();
-    //     Home.signinLink.waitForVisible();
-    //     Home.signinLink.click();
-    //     Home.forgottPasswordLink.waitForVisible();
-    //     Home.forgottPasswordLink.click(); 
-    //     Home.recoverEmail.waitForVisible();
-    //     if(Home.subscribeCancelIcon.isVisible()){
-    //         Home.subscribeCancelIcon.click();
-    //     }
-    //     Home.submitBtn.waitForVisible();
-    //     Home.submitBtn.click();
-    //     Home.recoverEmailError.waitForVisible();
-    //     expect(Home.recoverEmailError.getText()).to.eql(testData.createAccntDetails.recoverEmailError);
-    // })
+//     // it("Verify that an appropriate error is displayed when the user clicks on 'Submit' button without entering an email address.",()=>{
+//     //     Home.homepageMethod();
+//     //     Home.signinLink.waitForVisible();
+//     //     Home.signinLink.click();
+//     //     Home.forgottPasswordLink.waitForVisible();
+//     //     Home.forgottPasswordLink.click(); 
+//     //     Home.recoverEmail.waitForVisible();
+//     //     if(Home.subscribeCancelIcon.isVisible()){
+//     //         Home.subscribeCancelIcon.click();
+//     //     }
+//     //     Home.submitBtn.waitForVisible();
+//     //     Home.submitBtn.click();
+//     //     Home.recoverEmailError.waitForVisible();
+//     //     expect(Home.recoverEmailError.getText()).to.eql(testData.createAccntDetails.recoverEmailError);
+//     // })
 
-    it("Verify that an appropriate error is displayed when the user submits an unregistered email in 'Forgot Password'",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click();
-        Home.forgottPasswordLink.waitForVisible();
-        Home.forgottPasswordLink.click();
-        Home.recoverEmail.waitForVisible();
-        Home.recoverEmail.click();
-        Home.recoverEmail.setValue([testData.createAccntDetails.invalidEmail])
-        Home.submitBtn.waitForVisible();
-        Home.submitBtn.click();
-        Home.recoverEmailError.waitForVisible();
-        expect(Home.recoverEmailError.getText()).to.eql(testData.createAccntDetails.recoverEmailError);   
-    })
+//     it("Verify that an appropriate error is displayed when the user submits an unregistered email in 'Forgot Password'",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click();
+//         Home.forgottPasswordLink.waitForVisible();
+//         Home.forgottPasswordLink.click();
+//         Home.recoverEmail.waitForVisible();
+//         Home.recoverEmail.click();
+//         Home.recoverEmail.setValue([testData.createAccntDetails.invalidEmail])
+//         Home.submitBtn.waitForVisible();
+//         Home.submitBtn.click();
+//         Home.recoverEmailError.waitForVisible();
+//         expect(Home.recoverEmailError.getText()).to.eql(testData.createAccntDetails.recoverEmailError);   
+//     })
 
-    it("Verify that 'Subscription Login' page is displayed when the user clicks on 'Click here' link on the login page",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click(); 
-        browser.execute(function() {
-            document.querySelector(`.text-link`).scrollIntoView()
-        }) 
-        Home.browserMethod();
-        Home.clickHereLink.waitForVisible();
-        Home.clickHereLink.click();
-        Home.requestActInviteTitle.waitForVisible();
-        expect(Home.requestActInviteTitle.getText()).to.eql(testData.login.requestAccountInviteText);
-    })
+//     it("Verify that 'Subscription Login' page is displayed when the user clicks on 'Click here' link on the login page",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click(); 
+//         browser.execute(function() {
+//             document.querySelector(`.text-link`).scrollIntoView()
+//         }) 
+//         Home.browserMethod();
+//         Home.clickHereLink.waitForVisible();
+//         Home.clickHereLink.click();
+//         Home.requestActInviteTitle.waitForVisible();
+//         expect(Home.requestActInviteTitle.getText()).to.eql(testData.login.requestAccountInviteText);
+//     })
 
-    it("Verify that the appropriate error message is displayed when invalid email is submitted",()=>{
-        Home.homepageMethod();
-        Home.signinLink.waitForVisible();
-        Home.signinLink.click(); 
-        browser.scroll(0, 200);
-        Home.browserMethod();
-        Home.clickHereLink.waitForVisible();
-        Home.clickHereLink.click();
-        Home.GetsubscriptionEmail.waitForVisible();
-        Home.GetsubscriptionEmail.click();
-        Home.GetsubscriptionEmail.setValue([testData.createAccntDetails.invalidEmail])
-    })
-})
+//     it("Verify that the appropriate error message is displayed when invalid email is submitted",()=>{
+//         Home.homepageMethod();
+//         Home.signinLink.waitForVisible();
+//         Home.signinLink.click(); 
+//         browser.scroll(0, 200);
+//         Home.browserMethod();
+//         Home.clickHereLink.waitForVisible();
+//         Home.clickHereLink.click();
+//         Home.GetsubscriptionEmail.waitForVisible();
+//         Home.GetsubscriptionEmail.click();
+//         Home.GetsubscriptionEmail.setValue([testData.createAccntDetails.invalidEmail])
+//     })
+// })
 
 // describe("Backed by science, made for you",()=>{
 //     it("Verify that the user is navigated to 'Women's Health' page when 'Women's Health' image is clicked on the Backed by science, made for you",()=>{
