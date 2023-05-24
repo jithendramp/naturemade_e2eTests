@@ -11,6 +11,26 @@ import Shipping from "../page-objects/shipping.page";
 
 class Login extends Page{
 
+    get enterPWDLink() {
+        return $(`.password-modal .password-link`)
+    }
+
+    get inputUsername () {
+        return $('#username');
+    }
+
+    get inputPassword () {
+        return $('#Password');
+    }
+
+    get enterBtn() {
+        return $(`.password-button`)
+    }
+
+    get acceptCookieBtn() {
+        return $(`[id="onetrust-accept-btn-handler"]`)
+    }
+
     get loginpageHeading(){
         return $("#login h1");
     }
