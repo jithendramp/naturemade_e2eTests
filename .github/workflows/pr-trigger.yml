@@ -33,11 +33,11 @@ jobs:
             sleep 5
           done
           
-      - name: Set environment variable
-        run: echo "NATURE_MADE_PRE_URL=${{ env.NATURE_MADE_PRE_URL }}" >> $GITHUB_ENV
+#       - name: Set environment variable
+#         run: echo "NATURE_MADE_PRE_URL=${{ env.NATURE_MADE_PRE_URL }}" >> $GITHUB_ENV
           
-      - name: Permission to .sh files
-        run: chmod 777 e2e-tests.sh
+#       - name: Permission to .sh files
+#         run: chmod 777 e2e-tests.sh
         
       - name: Install dependencies
         run: npm install          
