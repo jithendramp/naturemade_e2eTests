@@ -1,4 +1,5 @@
 import LoginPage from '../page-objects/login.page.js'
+import { expect } from 'chai'
 
 describe('My Login application', () => {
     it('should login with valid credentials', async () => {
@@ -14,7 +15,7 @@ describe('My Login application', () => {
     it('Fail Scenario', async () => {
         browser.url('/')
         // await browser.fullscreenWindow()
-        expect(LoginPage.enterPWDLink).toHaveTextContaining('Enter using password')
+        expect(LoginPage.enterPWDLink.getText()).to.eql('Enter using password')
         LoginPage.enterPWDLink.click()
         // await LoginPage.inputPassword.setValue('port80')
         // await LoginPage.enterBtn.click()
